@@ -11,9 +11,7 @@ audio_group_set_gain(audiogroup_sfx, sfxVolume, 0);
 
 //Setting PER-TRACK gains manually (maybe there is a better way)
 musicVolumeTable = ds_map_create();
-musicVolumeTable[? fight_music] = 0.8;
-musicVolumeTable[? victory_music] = 0.8;
-musicVolumeTable[? bug_loop] = 0.9;
+
 
 // Tracking music playback
 currentMusic = -1;
