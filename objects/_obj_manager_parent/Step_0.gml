@@ -1,2 +1,0 @@
-
-interpret_controls();
