@@ -10,7 +10,7 @@ function core_generate_medkit(){
 	
 	var horizontal_position = irandom_range(area_width_min,area_width_max);
 	var vertical_position = irandom_range(area_height_min,area_height_max);
-	if(!position_meeting(horizontal_position,vertical_position,obj_hazard_parent) && !position_meeting(horizontal_position,vertical_position,obj_player_entity) && !position_meeting(horizontal_position,vertical_position,obj_spawner)){
+	if(!position_meeting(horizontal_position,vertical_position,obj_hazard_parent) && !position_meeting(horizontal_position,vertical_position,obj_bug_player_entity) && !position_meeting(horizontal_position,vertical_position,obj_spawner)){
 		instance_create_layer(horizontal_position,vertical_position,"Terrain",obj_medkit);
 		//here
 		show_debug_message("spawning medkit");
@@ -362,7 +362,7 @@ function core_spawn_players(){
 		var type = typeof(_player);
 		if(type == "struct"){
 			if(_player.is_active && (is_null(_player.player_instance) || !instance_exists(_player.player_instance))){
-				_player.player_instance = instance_create_layer(room_width / 2 + i * 20,room_height / 2,"Spawns",obj_player_entity,{
+				_player.player_instance = instance_create_layer(room_width / 2 + i * 20,room_height / 2,"Spawns",obj_bug_player_entity,{
 																																	player : _player,
 																																	player_number : _player.player_number,
 																																	face : 0,
@@ -386,9 +386,9 @@ function core_start_match(bet){
 	if(room != rm_Arena){
 		room_goto(rm_Start_input_check);
 	}else{
-		var players = instance_number(obj_player_entity);
+		var players = instance_number(obj_bug_player_entity);
 		for(var i = 0; i < players;i++){			
-			current_player = instance_find(obj_player_entity,i);
+			current_player = instance_find(obj_bug_player_entity,i);
 			current_player.start_round();
 		}
 		change_game_state(active_game)
@@ -428,9 +428,9 @@ function core_end_game(){
 			instance_destroy(enemy,false);
 		}
 	}
-	var bullet_number = instance_number(obj_bullet);
+	var bullet_number = instance_number(obj_bug_bullet);
 	for(var i = 0; i < bullet_number;i++){
-		var bullet = instance_find(obj_bullet,0);
+		var bullet = instance_find(obj_bug_bullet,0);
 		if(not_null(bullet)){
 			instance_destroy(bullet,false);
 		}

@@ -6,7 +6,7 @@ ideal_width=480;
 ideal_height=270;
 zoom=1;
 current_zoom = zoom;
-max_zoom=1;
+max_zoom=4;
 display_width=display_get_width();
 display_height=display_get_height();
 

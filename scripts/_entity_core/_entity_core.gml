@@ -57,7 +57,7 @@ function entity_take_damage(damage_source = 0,amount = 0,dash_amount = 0,bomb_am
 	if(!debug_iframes){
 		var parent = object_get_parent(id.object_index)
 		var enemy = parent == obj_enemy_parent || parent == obj_enemy_minion || parent == obj_enemy_boss
-		var player = object_get_parent(id.object_index) == obj_player;
+		var player = object_get_parent(id.object_index) == obj_bug_player;
 
 		if(enemy){
 			var damage_amount = 0;

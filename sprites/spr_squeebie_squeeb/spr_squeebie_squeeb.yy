@@ -27,7 +27,7 @@
   "origin":9,
   "parent":{
     "name":"Squeeb",
-    "path":"folders/Sprites/Squeeb.yy",
+    "path":"folders/Sprites/Characters/Squeeb.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

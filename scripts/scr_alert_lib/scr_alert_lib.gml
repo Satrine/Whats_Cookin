@@ -1,6 +1,5 @@
 
 ////@description Takes input options as an array and matching callback functions in a separate array to create a pop-up window.
-////@function Alert
 ////@param {string} Message to Display in pop-up window
 ////@param {array} Input_options options to display as buttons
 ////@param {ref} Source source of the creation of this alert

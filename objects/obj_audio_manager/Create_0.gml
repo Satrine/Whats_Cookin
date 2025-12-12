@@ -6,8 +6,8 @@ audio_group_load(audiogroup_sfx);
 //NOTE:FOR NOW THE MAIN MENU LOADS TOO QUICK AND SO THE MAIN MENU MUSIC WONT LOAD IN TIME TO PLAY, SO IT IS IN THE DEFAULT GROUP
 
 // Apply volume settings
-audio_group_set_gain(audiogroup_music, musicVolume, 0);
-audio_group_set_gain(audiogroup_sfx, sfxVolume, 0);
+//audio_group_set_gain(audiogroup_music, musicVolume, 0);
+//audio_group_set_gain(audiogroup_sfx, sfxVolume, 0);
 
 //Setting PER-TRACK gains manually (maybe there is a better way)
 musicVolumeTable = ds_map_create();

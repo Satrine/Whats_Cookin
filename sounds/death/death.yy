@@ -2,8 +2,8 @@
   "$GMSound":"v2",
   "%Name":"death",
   "audioGroupId":{
-    "name":"audiogroup_default",
-    "path":"audiogroups/audiogroup_default",
+    "name":"audiogroup_sfx",
+    "path":"audiogroups/audiogroup_sfx",
   },
   "bitDepth":0,
   "channelFormat":1,

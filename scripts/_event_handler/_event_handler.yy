@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"_event_handler",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_event_handler",
+  "parent":{
+    "name":"Event",
+    "path":"folders/Objects/_Core/Event.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

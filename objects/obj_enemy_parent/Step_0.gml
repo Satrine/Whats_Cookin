@@ -24,12 +24,12 @@ try{
 	var h = 32; // height of detection zone
 
 	// Check above (top rectangle)
-	if (collision_rectangle(x - w/2, y - h, x + w/2, y, obj_player, false, true)) {
+	if (collision_rectangle(x - w/2, y - h, x + w/2, y, obj_bug_player, false, true)) {
 		depth = 499; // behind
 	}
 
 	// Check below (bottom rectangle)
-	if (collision_rectangle(x - w/2, y, x + w/2, y + h, obj_player, false, true)) {
+	if (collision_rectangle(x - w/2, y, x + w/2, y + h, obj_bug_player, false, true)) {
 		depth = 501; // in front
 	}
 	check_iframes(300);
