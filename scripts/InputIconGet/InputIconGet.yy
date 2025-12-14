@@ -6,7 +6,7 @@
   "name":"InputIconGet",
   "parent":{
     "name":"Binding Icons",
-    "path":"folders/Input Plug-Ins/Binding Icons.yy",
+    "path":"folders/Extensions/Input Plug-Ins/Binding Icons.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

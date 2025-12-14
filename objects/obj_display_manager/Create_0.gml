@@ -35,8 +35,9 @@ for(var i=1; i<=room_last; i++)
   }
 }
 scribble_font_bake_outline_and_shadow("fnt_Retro","main",1,1,SCRIBBLE_OUTLINE.NO_OUTLINE,1,false);
-
 scribble_font_bake_outline_and_shadow("fnt_Retro_small","main_sm",1,1,SCRIBBLE_OUTLINE.NO_OUTLINE,1,false);
+scribble_font_bake_outline_and_shadow("fnt_normal","standard",1,1,SCRIBBLE_OUTLINE.NO_OUTLINE,1,false);
+
 
 
 window_set_size(ideal_width,ideal_height);

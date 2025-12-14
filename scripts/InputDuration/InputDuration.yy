@@ -6,7 +6,7 @@
   "name":"InputDuration",
   "parent":{
     "name":"Advanced",
-    "path":"folders/Input/Checkers/Advanced.yy",
+    "path":"folders/Extensions/Input/Checkers/Advanced.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

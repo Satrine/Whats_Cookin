@@ -6,7 +6,7 @@
   "name":"InputBindingFindCollisions",
   "parent":{
     "name":"Rebinding",
-    "path":"folders/Input/Rebinding.yy",
+    "path":"folders/Extensions/Input/Rebinding.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

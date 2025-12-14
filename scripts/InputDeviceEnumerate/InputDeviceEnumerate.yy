@@ -6,7 +6,7 @@
   "name":"InputDeviceEnumerate",
   "parent":{
     "name":"Device",
-    "path":"folders/Input/Device.yy",
+    "path":"folders/Extensions/Input/Device.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

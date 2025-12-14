@@ -1,2 +1,2 @@
 direction_facing = "left";
-move_speed = 1
+move_speed = 4

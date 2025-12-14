@@ -34,6 +34,7 @@ function Event(new_event_type,new_description,new_priority) constructor{
 	time_stamp = current_time;
 	description = new_description;
 	priority = new_priority;
+	event_message = "";
 	
 	////@function build_message
 	////@description takes event vars and creates a message to print.
@@ -59,8 +60,9 @@ function Event(new_event_type,new_description,new_priority) constructor{
 			default:
 				type_prefix = "Unknown";
 		}
-		_message = string_concat(time_stamp," ","[",_event_type,"]"," ",description);
-		
+		_message = string_concat(time_stamp," ","{",_event_type,"}"," ",description);
+		show_debug_message(_message);
+		event_message = _message
 		return _message;
 	
 	}
@@ -86,6 +88,8 @@ function Event(new_event_type,new_description,new_priority) constructor{
 		if(is_null(return_color)){ return_color = c_white;}
 		return return_color;
 	}
+	
+	build_message();
 }
 
 ////@function Console
@@ -93,7 +97,18 @@ function Event(new_event_type,new_description,new_priority) constructor{
 function Console() constructor{
 	event_list = ds_list_create();
 	
-	console_instance = instance_create_layer(get_screen_center_x(),get_screen_center_y(),"System",obj_console);
+	console_instance = ""
+	
+	static init_console = function(){
+		console_instance = instance_create_layer(get_screen_center_x(),get_screen_center_y(),"System",obj_console);
+		console_instance.visible = false;
+	}
+	
+	static toggle_console = function(){
+		if(not_null(console_instance)){
+			console_instance.visible = !console_instance.visible;
+		}
+	}
 	
 	////@function submit_event
 	////@description Adds event to list to be copied to instance console.
@@ -104,7 +119,8 @@ function Console() constructor{
 	////@function print_console
 	////@description copies current event list onto the console instance event_list to be printed.
 	static print_console = function(){
-		ds_list_copy(event_list,console_instance.event_list);
+		ds_list_copy(console_instance.event_list,event_list);
 	}
 	
+	init_console();
 }

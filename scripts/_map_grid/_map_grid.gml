@@ -9,26 +9,23 @@ function Map_Grid(_new_name,_new_width,_new_height,_new_mp_width,_new_mp_height)
 	height = _new_height;
 	mp_cell_width = _new_mp_width;
 	mp_cell_height = _new_mp_height;
-	grid_data = "";
-	mp_grid_data = "";
-	cell_width = 32;
-	cell_height = 32;
-	starting_x = 32;
-	starting_y = 128;
+	cell_width = 16;
+	cell_height = 16;
+	starting_x = 0;
+	starting_y = 0;
 	allow_diagonal = true;
 	is_precise = false;
 	
-	if(is_null(grid_data)){
-		//This may need to default to width = 15, height = 9
-		//bc 480 / 32 = 15 && 270 / 30 = 9
-		//32 does not divide evenly into 32, so it either needs to increase or decrease.
-		grid_data = ds_grid_create(width,height);
-		//cell width and height may change depending on how we want entities to navigate the space.
-		//the number of vertical and horizontal cells is determined by the space alloted in the 
-		//given room. in our case a room of size 544x544 gives us a clean 32x32 cell count.
-		mp_grid_data = mp_grid_create(starting_x,starting_y,cell_width,cell_height,mp_cell_width,mp_cell_height);
-		
-	}
+	
+	//This may need to default to width = 15, height = 9
+	//bc 480 / 32 = 15 && 270 / 30 = 9
+	//32 does not divide evenly into 32, so it either needs to increase or decrease.
+	grid_data = ds_grid_create(width,height);
+	//cell width and height may change depending on how we want entities to navigate the space.
+	//the number of vertical and horizontal cells is determined by the space alloted in the 
+	//given room. in our case a room of size 544x544 gives us a clean 32x32 cell count.
+	mp_grid_data = mp_grid_create(0,0,room_width / cell_width,room_height / cell_height,mp_cell_width,mp_cell_height);
+	
 	////@description Add objects for avoidance in the mp_grid
 	////@function add_obstacles
 	////@param {array} items_to_add array of items to add as obstacles.
@@ -84,14 +81,22 @@ function Map_Grid(_new_name,_new_width,_new_height,_new_mp_width,_new_mp_height)
 			return cell;
 		}
 	}
-	
+	////@function set_path
+	////@description Tries to find a path to target provided.
+	////@param {ref} path asset
+	////@param {real} start_x starting x position
+	////@param {real} start_y starting y position
+	////@param {real} target_x target x position
+	////@param {real} target_y target y position
 	static set_path = function(_path,start_x,start_y,target_x,target_y){
 		try{
 			var result = mp_grid_path(mp_grid_data,_path,start_x,start_y,target_x,target_y,allow_diagonal);		
-			if(result){
+			if(result == 1){
 				show_debug_message("Path found, updating data...");
+				return true
 			}else{
 				show_debug_message("Path cannot be found...");
+				return false
 			}
 		}catch(_exception){
 			show_debug_message(_exception.message);
@@ -99,6 +104,10 @@ function Map_Grid(_new_name,_new_width,_new_height,_new_mp_width,_new_mp_height)
 		    show_debug_message(_exception.script);
 		    show_debug_message(_exception.stacktrace);
 		}
+	}
+	
+	static draw_grid = function(){
+	
 	}
 }
 
