@@ -11,7 +11,7 @@ enum npc_size{
 ///
 ////@description Main NPC struct. Facilitates taking damage, as well as creating instances. Data handling.
 ////@function NPC
-function NPC(new_obj_reference,_new_name,_new_base_hp,new_current_hp = "",new_move_speed = "",new_size = npc_size.medium,new_grid = "") : Character(_new_name,_new_base_hp,new_current_hp = "",new_move_speed = "") constructor{
+function NPC(new_obj_reference,_new_name,_new_base_hp,new_current_hp = "",new_move_speed = "",new_size = npc_size.medium,new_grid = "",new_damage = 1) : Character(_new_name,_new_base_hp,new_current_hp = "",new_move_speed = "",new_damage = 1) constructor{
 
 	size = new_size;
 	
@@ -30,6 +30,10 @@ function NPC(new_obj_reference,_new_name,_new_base_hp,new_current_hp = "",new_mo
 	
 	static detect_target = function(_target){
 		
+	}
+	
+	static kill_npc = function(){
+		instance_destroy(npc_instance,true);
 	}
 
 }

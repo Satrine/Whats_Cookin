@@ -20,9 +20,15 @@ function prototype(){
 			}
 		}
     }
-	var npc = new NPC(obj_npc,"Test_Guy",1,,5,npc_size.medium,grid);
+	var npc1 = new NPC(obj_npc,"Test_Guy",1,,5,npc_size.medium,grid,1);
+	var npc2 = new NPC(obj_npc,"Test_Guy",1,,5,npc_size.medium,grid,1);
+	var npc3 = new NPC(obj_npc,"Test_Guy",1,,5,npc_size.medium,grid,1);
+	var npc4 = new NPC(obj_npc,"Test_Guy",1,,5,npc_size.medium,grid,1);
 
-	npc.spawn_npc(get_screen_center_x(),get_screen_center_y(),"Instances");
+	npc1.spawn_npc(get_screen_center_x() - 20,get_screen_center_y(),"Instances");
+	npc2.spawn_npc(get_screen_center_x() - 40,get_screen_center_y(),"Instances");
+	npc3.spawn_npc(get_screen_center_x() - 60,get_screen_center_y(),"Instances");
+	npc4.spawn_npc(get_screen_center_x() - 80,get_screen_center_y(),"Instances");
 
 	var char = instance_create_layer(get_screen_center_x(),get_screen_center_y(),"Instances",obj_player);
 	
@@ -31,5 +37,17 @@ function prototype(){
 	event_handler.create_event(ev_type.gather,"Here is yet another event!",ev_priority.high);
 	event_handler.create_event(ev_type.combat,"Somebody got hit for 50 health!",ev_priority.standard);
 	event_handler.create_event(ev_type.gather,"Loaded audio files...",ev_priority.high);
+	
+	event_handler.create_event(ev_type.gather,"Hey look a banana",ev_priority.standard);
+	event_handler.create_event(ev_type.craft,"Meal 'tomato soup' has been crafted! ",ev_priority.high);
+	event_handler.create_event(ev_type.gather,"tower_02 took 3 damage",ev_priority.low);
+	event_handler.create_event(ev_type.combat,"Player 'sandy' hit by 'rat' for 5 hitpoints",ev_priority.standard);
+	event_handler.create_event(ev_type.debug,"Loading next level...",ev_priority.low);
+	
+	event_handler.create_event(ev_type.gather,"Hey look a banana",ev_priority.standard);
+	event_handler.create_event(ev_type.craft,"Meal 'tomato soup' has been crafted! ",ev_priority.high);
+	event_handler.create_event(ev_type.gather,"tower_02 took 3 damage",ev_priority.low);
+	event_handler.create_event(ev_type.combat,"Player 'sandy' hit by 'rat' for 5 hitpoints",ev_priority.standard);
+	event_handler.create_event(ev_type.debug,"Loading next level...",ev_priority.low);
 	
 }

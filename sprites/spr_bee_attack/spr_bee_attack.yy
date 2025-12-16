@@ -47,7 +47,7 @@
   "origin":9,
   "parent":{
     "name":"bee",
-    "path":"folders/Sprites/Characters/Enemies/bee.yy",
+    "path":"folders/Sprites/Characters/Enemies/Buggin/bee.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
